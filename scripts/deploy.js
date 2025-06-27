@@ -11,6 +11,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     args: [],
     log: true,
   });
+
+  let bondingCurveERC20Factory = await deploy("BondingCurveERC20Factory", {
+    admin: deployer,
+    from: deployer,
+    gasLimit: 4000000,
+    args: [],
+    log: true,
+  });
 };
 
 module.exports.tags = ["erc20Factory"];

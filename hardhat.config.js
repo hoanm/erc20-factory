@@ -23,6 +23,16 @@ module.exports = {
     hardhat: {
       blockGasLimit: 7000000,
     },
+    testnet: {
+      url: "https://rpc.hyperliquid-testnet.xyz/evm",
+      chainId: 998,
+      throwOnTransactionFailures: true,
+      gasPrice: "auto",
+      accounts: [privateKey],
+      gas: 4000000,
+      timeout: 120000,
+      allowUnlimitedContractSize: true,
+    },
     aeneid: {
       url: "https://aeneid.storyrpc.io",
       chainId: 1315,
@@ -52,5 +62,12 @@ module.exports = {
   paths: {
     deploy: "scripts",
     deployments: "deployments",
+  },
+  sourcify: {
+    enabled: true,
+    // Optional: specify a different Sourcify server
+    apiUrl: "https://sourcify.parsec.finance",
+    // Optional: specify a different Sourcify repository
+    browserUrl: "https://testnet.purrsec.com/",
   },
 };
